@@ -2,5 +2,5 @@ import { StatusCodes } from "http-status-codes";
 
 export const globalErrorHandler = (error , req ,res , next)=>{
     console.log('global middle ware');
-    res.status(StatusCodes.BAD_REQUEST).json({error:error+""})
+    return res.status(StatusCodes.BAD_REQUEST || cause).json({error:error+""})
 }

@@ -9,7 +9,7 @@ export const auth = () => {
         const user = await userModel.findById(decodedToken.id);
         if(!user)
             return next(new Error('user not found' , {cause:StatusCodes.NOT_FOUND}));
-        req.user = user;
+        req.user = user;       
         next();
     })
 };
