@@ -5,7 +5,7 @@ import { valid } from "../../middleWare/validation.js";
 import { messageSchema } from "./message.validation.js";
 import { errHandler } from "../../utils/errorHandler/errHandler.js";
 const router = Router();
-    router.post('/:receiverId',auth(),valid(messageSchema),errHandler(messageServices.createMessage))
+    router.post('/:receiverId',auth(),valid(messageSchema),errHandler(messageServices.sendMessage))
     router.get('get-message/:messageId' ,auth() , errHandler(messageServices.getMessage ));
     router.delete('/:messageId' ,auth() , errHandler(messageServices.deleteMessage ));
     router.patch('/edit-message/:messageId' , auth() , errHandler(messageServices.editMessage));
